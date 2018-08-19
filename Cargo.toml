@@ -1,0 +1,6 @@
+[package]
+name = "algo"
+version = "0.1.0"
+authors = ["Joe Berria <joeberria@gmail.com>"]
+
+[dependencies]
