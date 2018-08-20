@@ -1,3 +1,6 @@
+use std::time::{ SystemTime, Duration };
+
+
 fn exchange<T>(array: &mut Vec<T>, i: usize, j: usize)
   where T: PartialOrd + Copy
 {
@@ -33,6 +36,27 @@ pub fn sort<T>(array: &mut Vec<T>)
     }
   }
 }
+
+pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
+  where T: PartialOrd + Copy
+{
+  let duration: Duration;
+  let timer = SystemTime::now();
+  sort(a);
+
+  match timer.elapsed() {
+    Ok(d) => {
+      duration = d;
+    },
+    Err(e) => {
+      duration = Duration::new(0, 0);
+      println!("merge sort: error getting duration, {:?}", e)
+    }
+  }
+
+  duration
+}
+
 
 #[cfg(test)]
 mod tests {

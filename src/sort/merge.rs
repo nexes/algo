@@ -1,3 +1,6 @@
+use std::time::{ SystemTime, Duration };
+
+
 fn merge<T>(left: &Vec<T>,  right: &Vec<T>, array: &mut Vec<T>)
   where T: PartialOrd + Copy
 {
@@ -63,6 +66,26 @@ pub fn sort<T>(a: &mut Vec<T>)
   }
 
   divide_list(a);
+}
+
+pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
+  where T: PartialOrd + Copy
+{
+  let duration: Duration;
+  let timer = SystemTime::now();
+  sort(a);
+
+  match timer.elapsed() {
+    Ok(d) => {
+      duration = d;
+    },
+    Err(e) => {
+      duration = Duration::new(0, 0);
+      println!("merge sort: error getting duration, {:?}", e)
+    }
+  }
+
+  duration
 }
 
 
