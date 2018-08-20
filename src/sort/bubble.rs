@@ -1,0 +1,68 @@
+fn exchange<T>(array: &mut Vec<T>, i: usize, j: usize)
+  where T: PartialOrd + Copy
+{
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+}
+
+pub fn sort<T>(array: &mut Vec<T>)
+  where T: PartialOrd + Copy
+{
+  let mut exchanged: bool;
+  let mut pass = 1;
+  let len = array.len();
+
+  if len < 2 {
+    return;
+  }
+
+  loop {
+    exchanged = false;
+
+    for i in 0..len - pass {
+      if array[i] > array[i + 1] {
+        exchange(array, i, i + 1);
+        exchanged = true;
+      }
+    }
+
+    pass += 1;
+    if !exchanged {
+      break;
+    }
+  }
+}
+
+#[cfg(test)]
+mod tests {
+  #[test]
+  fn bubble_sort() {
+    use super::*;
+
+    let mut a = vec![3, 21, 9, 5, 0, -6, 8, 4, 4, 7];
+    sort(&mut a);
+
+    assert_eq!(a, vec![-6, 0, 3, 4, 4, 5, 7, 8, 9, 21]);
+  }
+
+  #[test]
+  fn bubble_sort_empty() {
+    use super::*;
+
+    let mut a: Vec<i32> = vec![];
+    sort(&mut a);
+
+    assert_eq!(a, vec![]);
+  }
+
+  #[test]
+  fn bubble_sort_str() {
+    use super::*;
+
+    let mut a = vec!["apple", "cake", "lemon", "zuccini", "berry", "black berry", "kit kat"];
+    sort(&mut a);
+
+    assert_eq!(a, vec!["apple", "berry", "black berry", "cake", "kit kat", "lemon", "zuccini"]);
+  }
+}
