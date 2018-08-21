@@ -1,6 +1,6 @@
 [package]
 name = "rs_algo"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Joe Berria <joeberria@gmail.com>"]
 description ="Common sorting algorithms for generic types"
 readme = "README.md"
