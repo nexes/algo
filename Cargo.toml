@@ -1,5 +1,5 @@
 [package]
-name = "algo"
+name = "rs_algo"
 version = "0.1.0"
 authors = ["Joe Berria <joeberria@gmail.com>"]
 description ="Common sorting algorithms for generic types"

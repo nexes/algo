@@ -1,16 +1,18 @@
 ## Algo
 
-A small crate of commonly used sorting algorithms for any generic type that implements PartialOrd and copy
+A small crate of commonly used sorting algorithms for any generic type that implements PartialOrd and copy.
+
+The crate can be found here: [Crate](https://crates.io/crates/rs_algo)
 
 ### Usage
 ```rust
 [dependencies]
-algo = "0.1"
+rs_algo = "0.1"
 ```
 
 ### Example
 ```rust
-use algo::sort::*;
+use rs_algo::sort::*;
 
 
 fn main() {
