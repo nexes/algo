@@ -2,5 +2,8 @@
 name = "algo"
 version = "0.1.0"
 authors = ["Joe Berria <joeberria@gmail.com>"]
+description ="Common sorting algorithms for generic types"
+readme = "README.md"
+license = "MIT"
 
 [dependencies]

@@ -57,6 +57,15 @@ fn divide_list<T>(array: &mut Vec<T>)
   }
 }
 
+/// Sort the given vector with merge sort, the vector will be sorted
+///
+/// # Examples
+/// ```
+/// use algo::sort::merge;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// merge::sort(&mut a);
+/// ```
 pub fn sort<T>(a: &mut Vec<T>)
   where T: PartialOrd + Copy
 {
@@ -68,6 +77,15 @@ pub fn sort<T>(a: &mut Vec<T>)
   divide_list(a);
 }
 
+/// Sort the given vector with merge sort and return the time duration it took
+///
+/// # Examples
+/// ```
+/// use algo::sort::merge;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// let time = merge::sort_with_time(&mut a);
+/// ```
 pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
   where T: PartialOrd + Copy
 {

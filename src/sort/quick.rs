@@ -39,6 +39,15 @@ fn quick_sort<T>(array: &mut Vec<T>, start: usize, end: usize)
   }
 }
 
+/// Sort the given vector with quick sort, the vector will be sorted
+///
+/// # Examples
+/// ```
+/// use algo::sort::quick;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// quick::sort(&mut a);
+/// ```
 pub fn sort<T>(array: &mut Vec<T>)
   where T: PartialOrd + Copy
 {
@@ -50,6 +59,15 @@ pub fn sort<T>(array: &mut Vec<T>)
   quick_sort(array, 0, len - 1);
 }
 
+/// Sort the given vector with quick sort, the vector will be sorted, this returns the time duration it took to sort
+///
+/// # Examples
+/// ```
+/// use algo::sort::quick;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// quick::sort_with_time(&mut a);
+/// ```
 pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
   where T: PartialOrd + Copy
 {

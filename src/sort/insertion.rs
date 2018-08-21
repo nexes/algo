@@ -1,5 +1,14 @@
 use std::time::{ SystemTime, Duration };
 
+/// Sort the given vector with insertion sort, the vector will be sorted
+///
+/// # Examples
+/// ```
+/// use algo::sort::insertion;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// insertion::sort(&mut a);
+/// ```
 pub fn sort<T>(array: &mut Vec<T>)
   where T: PartialOrd + Copy
 {
@@ -21,6 +30,15 @@ pub fn sort<T>(array: &mut Vec<T>)
   }
 }
 
+/// Sort the given vector with insertion sort, the vector will be sorted, this will return the time duration it took to sort
+///
+/// # Examples
+/// ```
+/// use algo::sort::insertion;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// insertion::sort_with_time(&mut a);
+/// ```
 pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
   where T: PartialOrd + Copy
 {
