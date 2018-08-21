@@ -2,6 +2,12 @@
 
 A small crate of commonly used sorting algorithms for any generic type that implements PartialOrd and copy
 
+### Usage
+```rust
+[dependencies]
+algo = "0.1"
+```
+
 ### Example
 ```rust
 use algo::sort::*;
