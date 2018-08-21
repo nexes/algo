@@ -1,6 +1,6 @@
-extern crate algo;
+extern crate rs_algo;
 
-use algo::sort::*;
+use rs_algo::sort::*;
 
 
 // test
