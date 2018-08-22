@@ -43,7 +43,7 @@ fn quick_sort<T>(array: &mut Vec<T>, start: usize, end: usize)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::quick;
+/// use rs_algo::sort::quick;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// quick::sort(&mut a);
@@ -63,7 +63,7 @@ pub fn sort<T>(array: &mut Vec<T>)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::quick;
+/// use rs_algo::sort::quick;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// quick::sort_with_time(&mut a);

@@ -61,7 +61,7 @@ fn divide_list<T>(array: &mut Vec<T>)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::merge;
+/// use rs_algo::sort::merge;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// merge::sort(&mut a);
@@ -81,7 +81,7 @@ pub fn sort<T>(a: &mut Vec<T>)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::merge;
+/// use rs_algo::sort::merge;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// let time = merge::sort_with_time(&mut a);

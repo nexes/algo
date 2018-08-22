@@ -4,7 +4,7 @@ use std::time::{ SystemTime, Duration };
 ///
 /// # Examples
 /// ```
-/// use algo::sort::insertion;
+/// use rs_algo::sort::insertion;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// insertion::sort(&mut a);
@@ -34,7 +34,7 @@ pub fn sort<T>(array: &mut Vec<T>)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::insertion;
+/// use rs_algo::sort::insertion;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// insertion::sort_with_time(&mut a);

@@ -13,7 +13,7 @@ fn exchange<T>(array: &mut Vec<T>, i: usize, j: usize)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::bubble;
+/// use rs_algo::sort::bubble;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// bubble::sort(&mut a);
@@ -50,7 +50,7 @@ pub fn sort<T>(array: &mut Vec<T>)
 ///
 /// # Examples
 /// ```
-/// use algo::sort::bubble;
+/// use rs_algo::sort::bubble;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// bubble::sort_with_time(&mut a);
