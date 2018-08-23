@@ -65,6 +65,8 @@ fn divide_list<T>(array: &mut Vec<T>)
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// merge::sort(&mut a);
+///
+/// assert_eq!(a, vec![-8, 2, 2, 3, 8, 34]);
 /// ```
 pub fn sort<T>(a: &mut Vec<T>)
   where T: PartialOrd + Copy
@@ -85,6 +87,8 @@ pub fn sort<T>(a: &mut Vec<T>)
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
 /// let time = merge::sort_with_time(&mut a);
+///
+/// assert_eq!(a, vec![-8, 2, 2, 3, 8, 34]);
 /// ```
 pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
   where T: PartialOrd + Copy

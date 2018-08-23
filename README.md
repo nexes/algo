@@ -24,6 +24,7 @@ rs_algo = "0.1"
 ## Example
 ```rust
 use rs_algo::sort::*;
+use rs_algo::compare::LCS;
 
 
 fn main() {
