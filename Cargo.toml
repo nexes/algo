@@ -1,9 +1,12 @@
 [package]
 name = "rs_algo"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Joe Berria <joeberria@gmail.com>"]
 description ="Common sorting algorithms for generic types"
 readme = "README.md"
+repository = "https://github.com/nexes/algo"
+homepage = "https://github.com/nexes/algo"
+keywords = ["sort", "merge", "quick", "insertion", "bubble", "algorithm", "LCS"]
 license = "MIT"
 
 [dependencies]

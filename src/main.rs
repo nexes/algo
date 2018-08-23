@@ -1,6 +1,7 @@
 extern crate rs_algo;
 
 use rs_algo::sort::*;
+use rs_algo::compare::LCS;
 
 
 // test
@@ -21,4 +22,9 @@ fn main() {
 
   let time = bubble::sort_with_time(&mut d);
   println!("bubble sorted: time {:?}", time);
+
+  // get a new longest common sequence object
+  let lcs = LCS::new_subsequence("leighxxxft".to_string(), "right".to_string());
+  println!("lcs is = {}", lcs.subsequence_len);
+  println!("longest common subsequence = {}", lcs.get_longest_subsequence().expect("no lcs found"));
 }
