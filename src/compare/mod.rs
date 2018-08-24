@@ -1,3 +1,5 @@
-pub use self::subsequence::LCS;
+pub use self::subsequence::LCSubsequence;
+pub use self::substring::LCSubstring;
 
 mod subsequence;
+mod substring;

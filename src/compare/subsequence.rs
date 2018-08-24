@@ -7,30 +7,29 @@ use std::cmp::max;
 ///
 /// # Examples
 /// ```
-/// use rs_algo::compare::LCS;
+/// use rs_algo::compare::LCSubsequence;
 ///
-/// let lcs = LCS::new_subsequence("abttac".to_string(), "taccba".to_string());
+/// let lcs = LCSubsequence::new_subsequence("abttac".to_string(), "taccba".to_string());
 ///
 /// println!("length of the lcs is {}", lcs);
 /// assert_eq!(lcs.get_longest_subsequence(), Some("aba".to_string()));
 /// ```
 #[derive(Debug)]
-pub struct LCS {
+pub struct LCSubsequence {
   /// the length of the found longest common subsequence
   pub subsequence_len: u32,
-
   grid: Vec<Vec<u32>>,
   left_str: String,
   right_str: String,
 }
 
-impl Display for LCS {
+impl Display for LCSubsequence {
   /// Print the size of the longest subsequence
   /// # Examples
   /// ```
-  /// use rs_algo::compare::LCS;
+  /// use rs_algo::compare::LCSubsequence;
   ///
-  /// let lcs = LCS::new_subsequence("abttac".to_string(), "taccba".to_string());
+  /// let lcs = LCSubsequence::new_subsequence("abttac".to_string(), "taccba".to_string());
   ///
   /// println!("length of the lcs is {}", lcs);
   /// ```
@@ -40,18 +39,18 @@ impl Display for LCS {
 }
 
 
-impl LCS {
+impl LCSubsequence {
   /// This will return a new LCS object. The subsequence grid will be created and stored, the longest subsequence length
   /// will be known at this time.
   pub fn new_subsequence<T>(left: T, right: T) -> Self
     where T: AsRef<str>
-{
+  {
     let left_chars: Vec<char> = left.as_ref().chars().collect();
     let right_chars: Vec<char> = right.as_ref().chars().collect();
     let left_len = left_chars.len();
     let right_len = right_chars.len();
 
-    let mut l = LCS {
+    let mut l = LCSubsequence {
       subsequence_len: 0,
       grid: vec![vec![0; right_len + 1]; left_len + 1],
       left_str: left.as_ref().to_string(),
@@ -115,7 +114,7 @@ mod tests {
 
     let a = String::from("abbtaabtca");
     let b = "ax3taaca";
-    let lcs = LCS::new_subsequence(a, b.to_string());
+    let lcs = LCSubsequence::new_subsequence(a, b.to_string());
 
     assert_eq!(lcs.subsequence_len, 6);
     assert_eq!(lcs.get_longest_subsequence(), Some("ataaca".to_string()));
@@ -127,7 +126,7 @@ mod tests {
 
     let a = String::from("abbtaabtca");
     let b = "x";
-    let lcs = LCS::new_subsequence(a, b.to_string());
+    let lcs = LCSubsequence::new_subsequence(a, b.to_string());
 
     assert_eq!(lcs.subsequence_len, 0);
     assert_eq!(lcs.get_longest_subsequence(), None);
@@ -139,7 +138,7 @@ mod tests {
 
     let a = String::from("");
     let b = "";
-    let lcs = LCS::new_subsequence(a, b.to_string());
+    let lcs = LCSubsequence::new_subsequence(a, b.to_string());
 
     assert_eq!(lcs.subsequence_len, 0);
     assert_eq!(lcs.get_longest_subsequence(), None);
