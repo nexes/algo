@@ -2,6 +2,7 @@ extern crate rs_algo;
 
 use rs_algo::sort::*;
 use rs_algo::compare::{LCSubsequence, LCSubstring};
+use rs_algo::search::binary;
 
 
 // test
@@ -33,4 +34,15 @@ fn main() {
   let substring = LCSubstring::new_substring("!!!!Hello WorldXXXXX".to_string(), "XXX   Hello World@cvcvcvc".to_string());
   assert_eq!(substring.substring_len, 11);
   assert_eq!(substring.get_longest_substring(), Some("Hello World".to_string()));
+
+  // search our array. Binary search needs the array to already be sorted
+  match binary::search(817, &a) {
+    Some(value) => println!("our array has value {}", value),
+    None => println!("our array dosen't have value 817"),
+  }
+
+  match binary::index_of(817, &a) {
+    Some(index) => println!("index of 817 is {}", index),
+    None => println!("no index of 817, guess it's not in there"),
+  }
 }

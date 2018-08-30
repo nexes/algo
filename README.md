@@ -1,6 +1,6 @@
 ## Algo
 
-A small crate of commonly used sorting algorithms for any generic type that implements PartialOrd and copy.
+A small crate of commonly used sorting algorithms for any generic type that implements PartialOrd and Copy.
 
 The crate can be found here: [Crate](https://crates.io/crates/rs_algo)
 
@@ -14,6 +14,8 @@ The crate can be found here: [Crate](https://crates.io/crates/rs_algo)
 * Find the longest common subsequence of two strings
 * Find the longest common substring of two strings
 
+### Search
+* Find a value or it's index through binary search
 
 ## Usage
 ```rust
@@ -26,6 +28,7 @@ rs_algo = "0.1"
 extern crate rs_algo;
 
 use rs_algo::sort::*;
+use rs_algo::search::binary;
 use rs_algo::compare::{LCSubsequence, LCSubstring};
 
 
@@ -57,6 +60,18 @@ fn main() {
   let substring = LCSubstring::new_substring("!!!!Hello WorldXXXXX".to_string(), "XX Hello World@cvcvcvc".to_string());
   assert_eq!(substring.substring_len, 11);
   assert_eq!(substring.get_longest_substring(), Some("Hello World".to_string()));
+
+  // do a binary search on array 'a' to see if value 99 is in the array
+  match binary::search(99, &a) {
+    Some(value) => println!("our array has value {}", value),
+    None => println!("our array dosen't have value 99"),
+  }
+
+  // do a binary search on array 'a' to get the index. Note: with binary search, this may not be the first occurance
+  match binary::index_of(99, &a) {
+    Some(index) => println!("index of 99 is {}", index),
+    None => println!("no index of 99, guess it's not in there"),
+  }
 }
 ```
 
