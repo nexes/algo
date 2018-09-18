@@ -1,5 +1,6 @@
 extern crate rs_algo;
 
+use rs_algo::math;
 use rs_algo::sort::*;
 use rs_algo::compare::{LCSubsequence, LCSubstring};
 use rs_algo::search::binary;
@@ -45,4 +46,11 @@ fn main() {
     Some(index) => println!("index of 817 is {}", index),
     None => println!("no index of 817, guess it's not in there"),
   }
+
+  // common math functions
+  let divisor = math::gcd(30, 21);
+  assert_eq!(Ok(3), divisor);
+
+  let factor = math::factors(9124);
+  assert_eq!(Some(vec![2, 4, 2281, 4562]), factor);
 }

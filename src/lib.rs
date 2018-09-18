@@ -12,3 +12,8 @@ pub mod compare;
 /// `search` find a value or the index of a value within an array
 ///
 pub mod search;
+
+/// # math
+/// `math` common math operations
+///
+pub mod math;
