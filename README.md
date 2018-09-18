@@ -17,6 +17,11 @@ The crate can be found here: [Crate](https://crates.io/crates/rs_algo)
 ### Search
 * Find a value or it's index through binary search
 
+### Math
+* Greatest common divisor (Euclid's algorithm)
+* Find the factors of a number
+* Check if two numbers are relatively prime
+
 ## Usage
 ```rust
 [dependencies]
@@ -27,6 +32,7 @@ rs_algo = "0.1"
 ```rust
 extern crate rs_algo;
 
+use rs_algo::math;
 use rs_algo::sort::*;
 use rs_algo::search::binary;
 use rs_algo::compare::{LCSubsequence, LCSubstring};
@@ -72,6 +78,13 @@ fn main() {
     Some(index) => println!("index of 99 is {}", index),
     None => println!("no index of 99, guess it's not in there"),
   }
+
+  // common math functions
+  let divisor = math::gcd(30, 21);
+  let factor = math::factors(9124);
+
+  assert_eq!(Ok(3), divisor);
+  assert_eq!(Some(vec![2, 4, 2281, 4562]), factor);
 }
 ```
 
