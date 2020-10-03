@@ -30,8 +30,6 @@ rs_algo = "0.1"
 
 ## Example
 ```rust
-extern crate rs_algo;
-
 use rs_algo::math;
 use rs_algo::sort::*;
 use rs_algo::search::binary;

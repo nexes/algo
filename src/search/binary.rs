@@ -8,7 +8,6 @@
 ///
 /// # Examples
 /// ```
-/// extern crate rs_algo;
 /// use rs_algo::search::binary;
 ///
 /// let s = vec![1, 2, 3, 5, 7, 8, 9, 23, 24, 56, 67];
@@ -50,7 +49,6 @@ where
 ///
 /// # Examples
 /// ```
-/// extern crate rs_algo;
 /// use rs_algo::search::binary;
 ///
 /// let s = vec![1, 2, 3, 5, 7, 8, 9, 23, 24, 56, 67];

@@ -9,4 +9,6 @@ homepage = "https://github.com/nexes/algo"
 keywords = ["merge", "quick", "insertion", "bubble", "algorithm"]
 license = "MIT"
 
+edition = '2018'
+
 [dependencies]
