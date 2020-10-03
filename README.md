@@ -89,4 +89,4 @@ fn main() {
 ```
 
 ## License
-MIT
+MIT License Copyright (c) <2018-2020> <Joe Berria>
