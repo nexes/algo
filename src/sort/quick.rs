@@ -41,6 +41,27 @@ where
     }
 }
 
+/// Returns a sort vector with quick sort, the original will not be changed
+///
+/// # Examples
+/// ```
+/// use rs_algo::sort::quick;
+///
+/// let mut a = vec![3, 2, -8, 34, 2, 8];
+/// let sorted = quick::sort(&mut a);
+///
+/// assert_eq!(sorted, vec![-8, 2, 2, 3, 8, 34]);
+/// assert_eq!(a, vec![3, 2, -8, 34, 2, 8]);
+/// ```
+pub fn sort<T>(array: &Vec<T>) -> Vec<T>
+where
+    T: PartialOrd + Copy,
+{
+    let mut sorted = array.clone();
+    sort_mut(&mut sorted);
+    sorted
+}
+
 /// Sort the given vector with quick sort, the vector will be sorted
 ///
 /// # Examples
@@ -48,11 +69,11 @@ where
 /// use rs_algo::sort::quick;
 ///
 /// let mut a = vec![3, 2, -8, 34, 2, 8];
-/// quick::sort(&mut a);
+/// quick::sort_mut(&mut a);
 ///
 /// assert_eq!(a, vec![-8, 2, 2, 3, 8, 34]);
 /// ```
-pub fn sort<T>(array: &mut Vec<T>)
+pub fn sort_mut<T>(array: &mut Vec<T>)
 where
     T: PartialOrd + Copy,
 {
@@ -81,7 +102,7 @@ where
 {
     let duration: Duration;
     let timer = SystemTime::now();
-    sort(a);
+    sort_mut(a);
 
     match timer.elapsed() {
         Ok(d) => {
@@ -102,8 +123,19 @@ mod tests {
     fn quick_sort() {
         use super::*;
 
+        let a = vec![3, 21, 9, 5, 0, -6, 8, 4, 4, 7];
+        let sorted = sort(&a);
+
+        assert_eq!(sorted, vec![-6, 0, 3, 4, 4, 5, 7, 8, 9, 21]);
+        assert_eq!(a, vec![3, 21, 9, 5, 0, -6, 8, 4, 4, 7]);
+    }
+
+    #[test]
+    fn quick_sort_mut() {
+        use super::*;
+
         let mut a = vec![3, 21, 9, 5, 0, -6, 8, 4, 4, 7];
-        sort(&mut a);
+        sort_mut(&mut a);
 
         assert_eq!(a, vec![-6, 0, 3, 4, 4, 5, 7, 8, 9, 21]);
     }
@@ -113,7 +145,7 @@ mod tests {
         use super::*;
 
         let mut a: Vec<i32> = vec![];
-        sort(&mut a);
+        sort_mut(&mut a);
 
         assert_eq!(a, vec![]);
     }
@@ -123,7 +155,7 @@ mod tests {
         use super::*;
 
         let mut a = vec![3];
-        sort(&mut a);
+        sort_mut(&mut a);
 
         assert_eq!(a, vec![3]);
     }
@@ -141,7 +173,7 @@ mod tests {
             "black berry",
             "kit kat",
         ];
-        sort(&mut a);
+        sort_mut(&mut a);
 
         assert_eq!(
             a,
