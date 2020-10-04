@@ -26,18 +26,17 @@ fn main() {
         4, 9, 817, 1, 3, 99, 10, 7, 2, 11, -5, 4, 9, 87, 1, 3, 99, 10, 7, 2, 11, -5, 4, 9, 8,
     ];
 
-    // This will sort the vector passed in, changing the original vector order
-    merge::sort(&mut a);
-    quick::sort(&mut b);
-    insertion::sort(&mut c);
-    bubble::sort(&mut d);
+    // Get a sorted array without changing the original
+    let sorted_bubble = bubble::sort(&a);
+    let sorted_insertion = insertion::sort(&b);
+    let sorted_merge = merge::sort(&c);
+    let sorted_quick = quick::sort(&d);
 
-    // Or if want the time taken you can use sort_with_time
-    //
-    // let time = merge::sort_with_time(&mut a);
-    // let time = quick::sort_with_time(&mut b);
-    // let time = insertion::sort_with_time(&mut c);
-    // let time = bubble::sort_with_time(&mut d);
+    // This will sort the vector passed in, changing the original vector order
+    merge::sort_mut(&mut a);
+    quick::sort_mut(&mut b);
+    insertion::sort_mut(&mut c);
+    bubble::sort_mut(&mut d);
 
     // get a new longest common sequence object
     let sequence = LCSubsequence::new_subsequence("leighxxxft".to_string(), "right".to_string());

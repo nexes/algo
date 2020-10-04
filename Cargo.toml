@@ -1,6 +1,6 @@
 [package]
 name = "rs_algo"
-version = "0.1.7"
+version = "0.2.0"
 authors = ["Joe Berria <joeberria@gmail.com>"]
 description ="Common sorting algorithms and other common computer science algorithms."
 readme = "README.md"
@@ -10,5 +10,8 @@ keywords = ["merge", "quick", "insertion", "bubble", "algorithm"]
 license = "MIT"
 
 edition = '2018'
+
+[[example]]
+name = "algo"
 
 [dependencies]

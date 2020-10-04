@@ -1,7 +1,6 @@
 ## Algo
 
 A small crate of commonly used sorting algorithms for any generic type that implements PartialOrd and Copy.
-
 The crate can be found here: [Crate](https://crates.io/crates/rs_algo)
 
 ### Sorting
@@ -25,7 +24,7 @@ The crate can be found here: [Crate](https://crates.io/crates/rs_algo)
 ## Usage
 ```rust
 [dependencies]
-rs_algo = "0.1"
+rs_algo = "^0.2"
 ```
 
 ## Example
@@ -87,4 +86,4 @@ fn main() {
 ```
 
 ## License
-MIT License Copyright (c) <2018-2020> <Joe Berria>
+MIT License Copyright (c) <2018-2020> Joe Berria
