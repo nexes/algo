@@ -1,12 +1,12 @@
 [package]
 name = "rs_algo"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Joe Berria <joeberria@gmail.com>"]
 description ="Common sorting algorithms and other common computer science algorithms."
 readme = "README.md"
 repository = "https://github.com/nexes/algo"
 homepage = "https://github.com/nexes/algo"
-keywords = ["merge", "quick", "insertion", "bubble", "algorithm"]
+keywords = ["sort", "sorting", "merge", "quick", "insertion", "bubble", "algorithm"]
 license = "MIT"
 
 edition = '2018'
