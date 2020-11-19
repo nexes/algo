@@ -53,12 +53,6 @@ fn main() {
   insertion::sort_mut(&mut c);
   bubble::sort_mut(&mut d);
 
-  // Or if want the time taken you can use sort_with_time
-  // let time = merge::sort_with_time(&mut a);
-  // let time = quick::sort_with_time(&mut b);
-  // let time = insertion::sort_with_time(&mut c);
-  // let time = bubble::sort_with_time(&mut d);
-
   // get a new longest common sequence object
   let sequence = LCSubsequence::new_subsequence("leighxxxft".to_string(), "right".to_string());
   assert_eq!(sequence.subsequence_len, 4);

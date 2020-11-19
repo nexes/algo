@@ -1,5 +1,3 @@
-use std::time::{Duration, SystemTime};
-
 fn exchange<T>(array: &mut Vec<T>, i: usize, j: usize)
 where
     T: PartialOrd + Copy,
@@ -68,38 +66,6 @@ where
             break;
         }
     }
-}
-
-/// Sort the given vector with insertion sort, the vector will be sorted, this will return the time duration it took to sort
-///
-/// # Examples
-/// ```
-/// use rs_algo::sort::bubble;
-///
-/// let mut a = vec![3, 2, -8, 34, 2, 8];
-/// bubble::sort_with_time(&mut a);
-///
-/// assert_eq!(a, vec![-8, 2, 2, 3, 8, 34]);
-/// ```
-pub fn sort_with_time<T>(a: &mut Vec<T>) -> Duration
-where
-    T: PartialOrd + Copy,
-{
-    let duration: Duration;
-    let timer = SystemTime::now();
-    sort_mut(a);
-
-    match timer.elapsed() {
-        Ok(d) => {
-            duration = d;
-        }
-        Err(e) => {
-            duration = Duration::new(0, 0);
-            println!("merge sort: error getting duration, {:?}", e)
-        }
-    }
-
-    duration
 }
 
 #[cfg(test)]
