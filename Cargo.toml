@@ -6,7 +6,7 @@ description ="Common sorting algorithms and other common computer science algori
 readme = "README.md"
 repository = "https://github.com/nexes/algo"
 homepage = "https://github.com/nexes/algo"
-keywords = ["sort", "sorting", "merge", "quick", "insertion", "bubble", "algorithm"]
+keywords = ["sort", "sorting", "merge", "quick", "insertion"]
 license = "MIT"
 
 edition = '2018'
